@@ -17,11 +17,8 @@ public class AwsClientConfiguration {
 		// Utility classes should not have public constructors (squid:S1118)
 	}
 	
-	public static String s = "AKIAJTEHKQHQCH4P2XIQ";
-	public static String k = "D6IvUOh6gkYp435G/DYXYaykpLxKih1ntB2xHNZD";
-
 	public static AWSCredentials credentials() {
-		return new BasicAWSCredentials(s,k);
+		return new BasicAWSCredentials(System.getenv("AWS_SERVICE_KEY"), System.getenv("AWS_SERVICE_SECRET"));
 	}
 
 	public static AmazonSQS sqsClient() {
